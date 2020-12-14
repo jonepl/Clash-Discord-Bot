@@ -1,19 +1,16 @@
-# Clash of Clans Discord Bot (Mango Wars)
+# Clash of Clans Discord Bot
 
 ## Installation
 
 ### Required Apps
 
 * Install [NodeJS](https://nodejs.org/en/)
-* Create an account and server in [Discord](https://discord.com/login)
+* Active account & server in [Discord](https://discord.com/login)
 
 ### Required Libraries
 
 * Discord.js
-
-```
-$ npm install discordjs
-```
+* Nodemon
 
 ## Setting up Discord Bot
 
@@ -30,9 +27,21 @@ $ npm install discordjs
 
 ## Setting up Clash of Clans API
 
+
 * Create and an account in the [Clash of Clan API](https://developer.clashofclans.com/#/)
 *  Navigate to My Account and create a Bearer Key. You will need to find out you public IP and pass this value into the API call within your code.
 * Add your Bearer key to your 
+
+## Running App
+
+This Discord server app uses Nodemon. Start the app with the following command
+
+```
+$ npm run watch
+```
+
+
+# Starting from Scrath
 
 ## Project Setup
 
@@ -42,27 +51,41 @@ Navigate to the directory that you like your project to live and create your pro
 $ npm init
 ```
 
+Update package.json to use nodemon
+```json
+{
+  ...
+  "scripts": {
+    "watch": "nodemon",
+    ...
+  },
+  ...
+}
+```
+
+
 Install DiscordJS
 
 ```shell
 $ npm install discord.js
+$ npm install nodemon --save-dev
 ```
 
-### Simple Example
+Create the following files
 
 ```javascript
 //config.js
 
 module.exports = {
     "discord": {
-        "clanId": "<ClientId>",
+        "clanId": "<your-clientId>",
         "prefix": "!",
-        "token": "<Token>"
+        "token": "<your-token>"
     },
     "api": {
         "baseUri": "https://your-endpoint.io/api",
         "headers": {
-            'Authorization': 'Bearer <clash-api-token>',
+            'Authorization': 'Bearer <your-clash-api-token>',
         }
     }
 }
@@ -100,7 +123,13 @@ client.login(config.discord.token)
 
 ```
 
-## References
+Start application
+
+```
+$ $ npm run watch
+```
+
+# References
 
 **Discord Bot Token:** [Discord Developer Portal](https://discordapp.com/developers/) > Bot > Token
 
@@ -119,7 +148,7 @@ client.login(config.discord.token)
 2. https://www.youtube.com/watch?v=nTGtiCC3iQM&ab_channel=CodeLyon
 
 
-### Links
+## Links
 
 Clash API: https://developer.clashofclans.com/#/
 
@@ -128,10 +157,3 @@ Discord Developer Portal: https://discordapp.com/developers/
 Permissions Calculator: https://discordapi.com/permissions.html
 
 
-# Running App
-
-This Discord server app uses Nodemon. Start the app with the following command
-
-```
-$ npm run watch
-```

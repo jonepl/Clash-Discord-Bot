@@ -51,27 +51,30 @@ Navigate to the directory that you like your project to live and create your pro
 $ npm init
 ```
 
-Update package.json to use nodemon
-```json
-{
-  ...
-  "scripts": {
-    "watch": "nodemon",
-    ...
-  },
-  ...
-}
-```
-
-
-Install DiscordJS
+### Install DiscordJS & nodem
 
 ```shell
 $ npm install discord.js
+```
+
+### Setup Nodemon [Optional] 
+
+Install Nodemon
+```shell
 $ npm install nodemon --save-dev
 ```
 
-Create the following files
+Add nodemon to your package.json
+```json
+{
+
+  "scripts": {
+    "watch": "nodemon",
+  }
+}
+```
+
+### Create the following files
 
 ```javascript
 //config.js
@@ -123,10 +126,16 @@ client.login(config.discord.token)
 
 ```
 
-Start application
+### Start application
 
+If using nodemon
 ```
-$ $ npm run watch
+$ npm run watch 
+```
+
+Without Nodemon 
+```
+$ node index.js
 ```
 
 # References
